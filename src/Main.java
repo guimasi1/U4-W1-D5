@@ -63,8 +63,8 @@ public class Main {
             }
             int elementoScelto;
             do {
-                System.out.println("Inserisci un numero da 1 a 5.");
-                System.out.println("Se vuoi uscire dalla console premi 0.");
+                System.out.println("Inserisci un numero da 1 a 5 per selezionare il media desiderato.");
+                System.out.println("Se desideri uscire dalla console premi 0.");
                 elementoScelto = Integer.parseInt(scanner.nextLine());
             } while (!(elementoScelto <= 5 && elementoScelto >= 0));
 
@@ -143,22 +143,22 @@ public class Main {
                         for (int i = 0; i < numeroVolume; i++) {
                             ((Video) elementiMultimediali[elementoScelto - 1]).abbassaVolume();
                         }
-                        if (azione.equals("a")) {
+                    }
+                    if (azione.equals("a")) {
                             System.out.println("Di quanto vuoi aumentare la luminosità?");
                             numeroLuminosità = Integer.parseInt(scanner.nextLine());
                             for (int i = 0; i < numeroLuminosità; i++) {
                                 ((Video) elementiMultimediali[elementoScelto - 1]).aumentaLuminosita();
                             }
                         }
-                        if (azione.equals("d")) {
+                    if (azione.equals("d")) {
                             System.out.println("Di quanto vuoi diminuire la luminosità?");
                             numeroLuminosità = Integer.parseInt(scanner.nextLine());
                             for (int i = 0; i < numeroLuminosità; i++) {
                                 ((Video) elementiMultimediali[elementoScelto - 1]).diminuisciLuminosita();
                             }
                         }
-                    }
-                } while (!azione.equals("p"));
+                    } while (!azione.equals("p"));
                 ((Video) elementiMultimediali[elementoScelto - 1]).play();
             }
 

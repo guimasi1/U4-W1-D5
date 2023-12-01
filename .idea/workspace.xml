@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b0c7ffd-4333-4b71-bbb8-b42b700ad58d" name="Changes" comment="fixes quit command in main">
+    <list default="true" id="4b0c7ffd-4333-4b71-bbb8-b42b700ad58d" name="Changes" comment="adds max brightness and max volume">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Audio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Immagine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Immagine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Video.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/ElementoMultimediale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/ElementoMultimediale.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701439116870</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="adds max brightness and max volume">
+      <option name="closed" value="true" />
+      <created>1701441414565</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701441414565</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -105,6 +112,7 @@
     <MESSAGE value="Implements methods for brightness, volume, play, show." />
     <MESSAGE value="main methods: player and aggiungiMedia" />
     <MESSAGE value="fixes quit command in main" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes quit command in main" />
+    <MESSAGE value="adds max brightness and max volume" />
+    <option name="LAST_COMMIT_MESSAGE" value="adds max brightness and max volume" />
   </component>
 </project>
