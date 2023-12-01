@@ -10,17 +10,26 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner scanner = new Scanner(System.in);
-    static ElementoMultimediale[] elementiMultimediali = new ElementoMultimediale[5];
+    static int numeroElementiDaCreare;
+    static ElementoMultimediale[] elementiMultimediali;
 
     public static void main(String[] args) {
         aggiungiMedia();
         player();
     }
     public static void aggiungiMedia() {
+
+        do {
+            System.out.println("Quanti media vuoi creare? Inserisci un numero positivo.");
+            numeroElementiDaCreare = Integer.parseInt(scanner.nextLine());
+
+        } while (!(numeroElementiDaCreare > 0));
+        ElementoMultimediale[] elementiDaCopiare = new ElementoMultimediale[numeroElementiDaCreare];
+
         String sceltaTipo;
         String titolo;
         int durata;
-        for (int i = 0; i < elementiMultimediali.length; i++) {
+        for (int i = 0; i < numeroElementiDaCreare; i++) {
             do {
                 System.out.println("Scegli il tipo di media: 1 - audio, 2 - immagine, 3 - video.");
                 sceltaTipo = scanner.nextLine();
@@ -33,23 +42,23 @@ public class Main {
                         System.out.println("Inserisci la durata dell'audio. Deve essere un numero positivo.");
                         durata = Integer.parseInt(scanner.nextLine());
                     } while(!(durata > 0));
-                    elementiMultimediali[i] = new Audio(titolo, durata);
+                    elementiDaCopiare[i] = new Audio(titolo, durata);
                     break;
                 case "2":
-                    elementiMultimediali[i] = new Immagine(titolo);
+                    elementiDaCopiare[i] = new Immagine(titolo);
                     break;
                 case "3":
                     do {
                         System.out.println("Inserisci la durata del video. Deve essere un numero positivo.");
                         durata = Integer.parseInt(scanner.nextLine());
                     } while(!(durata > 0));
-                    elementiMultimediali[i] = new Video(titolo, durata);
+                    elementiDaCopiare[i] = new Video(titolo, durata);
                     break;
                 default:
                     System.out.println("Errore.");
             }
         }
-
+        elementiMultimediali = elementiDaCopiare;
     }
     public static void player() {
         System.out.println("Apro la console");
@@ -63,10 +72,10 @@ public class Main {
             }
             int elementoScelto;
             do {
-                System.out.println("Inserisci un numero da 1 a 5 per selezionare il media desiderato.");
+                System.out.println("Inserisci un numero da 1 a " + numeroElementiDaCreare + " per selezionare il media desiderato.");
                 System.out.println("Se desideri uscire dalla console premi 0.");
                 elementoScelto = Integer.parseInt(scanner.nextLine());
-            } while (!(elementoScelto <= 5 && elementoScelto >= 0));
+            } while (!(elementoScelto <= numeroElementiDaCreare && elementoScelto >= 0));
 
             if (elementoScelto == 0) {
                 exit = true;

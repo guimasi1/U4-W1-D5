@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b0c7ffd-4333-4b71-bbb8-b42b700ad58d" name="Changes" comment="adds max brightness and max volume">
+    <list default="true" id="4b0c7ffd-4333-4b71-bbb8-b42b700ad58d" name="Changes" comment="fixes controls for videos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/ElementoMultimediale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/ElementoMultimediale.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +92,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701441414565</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixes controls for videos">
+      <option name="closed" value="true" />
+      <created>1701441899771</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701441899771</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +120,7 @@
     <MESSAGE value="main methods: player and aggiungiMedia" />
     <MESSAGE value="fixes quit command in main" />
     <MESSAGE value="adds max brightness and max volume" />
-    <option name="LAST_COMMIT_MESSAGE" value="adds max brightness and max volume" />
+    <MESSAGE value="fixes controls for videos" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes controls for videos" />
   </component>
 </project>
