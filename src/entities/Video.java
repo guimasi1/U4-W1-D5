@@ -46,7 +46,7 @@ public class Video extends ElementoMultimediale implements Riproducibile, Lumino
     public void play() {
         System.out.println("PLAY");
         for (int i = 0; i < this.durata; i++) {
-            System.out.println(this.getTitle() + this.puntiEsclamativiVolume() + this.asterischiLuminosita());
+            System.out.println(this.getTitolo() + this.puntiEsclamativiVolume() + this.asterischiLuminosita());
         }
         System.out.println("Fine video.");
     }
@@ -77,7 +77,7 @@ public class Video extends ElementoMultimediale implements Riproducibile, Lumino
 
     @Override
     public void diminuisciLuminosita() {
-        if(this.luminosita > 1) {
+        if(this.luminosita > 0) {
             System.out.println("Diminuisco la luminosità");
             this.luminosita--;
         } else {

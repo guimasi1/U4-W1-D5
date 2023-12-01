@@ -19,7 +19,7 @@ public class Immagine extends ElementoMultimediale implements Luminosita, NonRip
     @Override
     public void show() {
         System.out.println("Mostro l'immagine");
-        System.out.println(this.getTitle() + this.asterischiLuminosita());
+        System.out.println(this.getTitolo() + this.asterischiLuminosita());
     }
 
     @Override
@@ -39,7 +39,7 @@ public class Immagine extends ElementoMultimediale implements Luminosita, NonRip
 
     @Override
     public void diminuisciLuminosita() {
-        if(this.luminosita > 1) {
+        if(this.luminosita > 0) {
             System.out.println("Diminuisco la luminosità");
             this.luminosita--;
         } else {

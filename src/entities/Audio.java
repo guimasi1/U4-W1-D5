@@ -21,7 +21,7 @@ public class Audio extends ElementoMultimediale implements Riproducibile {
     public void play() {
         System.out.println("PLAY");
         for (int i = 0; i < this.durata; i++) {
-            System.out.println(this.getTitle() + this.puntiEsclamativiVolume());
+            System.out.println(this.getTitolo() + this.puntiEsclamativiVolume());
         }
         System.out.println("Fine audio.");
     }
@@ -37,8 +37,12 @@ public class Audio extends ElementoMultimediale implements Riproducibile {
 
     @Override
     public void abbassaVolume() {
-        System.out.println("Abbasso il volume");
-        this.volume--;
+        if (this.volume > 0) {
+            System.out.println("Abbasso il volume");
+            this.volume--;
+        } else {
+            System.out.println("Il volume è già a 0");
+        }
     }
 
     @Override

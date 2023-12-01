@@ -3,16 +3,17 @@ package entities;
 public abstract class ElementoMultimediale {
 
     // ATTRIBUTI
-    private String title;
+    private String titolo;
+    private String tipo;
 
     // COSTRUTTORE
-    public ElementoMultimediale(String title) {
-        this.title = title;
+    public ElementoMultimediale(String titolo) {
+        this.titolo = titolo;
     }
 
     // GETTER
 
-    public String getTitle() {
-        return title;
+    public String getTitolo() {
+        return titolo;
     }
 }
