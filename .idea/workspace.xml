@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b0c7ffd-4333-4b71-bbb8-b42b700ad58d" name="Changes" comment="Implements methods for brightness, volume, play, show.">
+    <list default="true" id="4b0c7ffd-4333-4b71-bbb8-b42b700ad58d" name="Changes" comment="main methods: player and aggiungiMedia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Audio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/ElementoMultimediale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/ElementoMultimediale.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Immagine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Immagine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Video.java" afterDir="false" />
     </list>
@@ -72,7 +71,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701426673641</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="main methods: player and aggiungiMedia">
+      <option name="closed" value="true" />
+      <created>1701436892365</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701436892365</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -89,6 +96,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Classes structure" />
     <MESSAGE value="Implements methods for brightness, volume, play, show." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implements methods for brightness, volume, play, show." />
+    <MESSAGE value="main methods: player and aggiungiMedia" />
+    <option name="LAST_COMMIT_MESSAGE" value="main methods: player and aggiungiMedia" />
   </component>
 </project>

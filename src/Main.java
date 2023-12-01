@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
     static ElementoMultimediale[] elementiMultimediali = new ElementoMultimediale[5];
-    static boolean exit = false;
 
     public static void main(String[] args) {
         aggiungiMedia();
@@ -54,102 +53,115 @@ public class Main {
     }
     public static void player() {
         System.out.println("Apro la console");
-        System.out.println("Questi sono i media disponibili");
-        for (ElementoMultimediale elemento: elementiMultimediali
-             ) {
-            System.out.println(elemento.getTitolo());
-        }
-        int elementoScelto;
+        boolean exit = false;
         do {
-            System.out.println("Inserisci un numero da 1 a 5.");
-            elementoScelto = Integer.parseInt(scanner.nextLine());
-        } while(!(elementoScelto <= 5 && elementoScelto >= 1));
 
-        String azione;
-        int numeroVolume;
-        int numeroLuminosità;
+            System.out.println("Questi sono i media disponibili");
+            for (ElementoMultimediale elemento : elementiMultimediali
+            ) {
+                System.out.println(elemento.getTitolo() + " " + elemento.getClass().getSimpleName());
+            }
+            int elementoScelto;
+            do {
+                System.out.println("Inserisci un numero da 1 a 5.");
+                System.out.println("Se vuoi uscire dalla console premi 0.");
+                elementoScelto = Integer.parseInt(scanner.nextLine());
+            } while (!(elementoScelto <= 5 && elementoScelto >= 0));
 
-        if(elementiMultimediali[elementoScelto - 1] instanceof Audio) {
-            do {
-                System.out.println("Premi p per far partire l'audio.");
-                System.out.println("Premi '+' per aumentare il volume e '-' per diminuirlo.");
-                azione = scanner.nextLine();
-                if(azione.equals("+")) {
-                    System.out.println("Di quanto vuoi aumentare il volume?");
-                    numeroVolume = Integer.parseInt(scanner.nextLine());
-                    for (int i = 0; i < numeroVolume; i++) {
-                        ((Audio) elementiMultimediali[elementoScelto - 1]).alzaVolume();
-                    }
-                }
-                if(azione.equals("-")) {
-                    System.out.println("Di quanto vuoi diminuire il volume?");
-                    numeroVolume = Integer.parseInt(scanner.nextLine());
-                    for (int i = 0; i < numeroVolume; i++) {
-                        ((Audio) elementiMultimediali[elementoScelto - 1]).abbassaVolume();
-                    }
-                }
-            } while(!azione.equals("p"));
-            ((Audio) elementiMultimediali[elementoScelto - 1]).play();
-        }
-        if(elementiMultimediali[elementoScelto - 1] instanceof Immagine) {
-            do {
-                System.out.println("Premi 'm' per mostrare l'immagine.");
-                System.out.println("Premi '+' per aumentare la luminosità o '-' per diminuirla.");
-                azione = scanner.nextLine();
-                if(azione.equals("+")) {
-                    System.out.println("Di quanto vuoi aumentare la luminosità?");
-                    numeroLuminosità = Integer.parseInt(scanner.nextLine());
-                    for (int i = 0; i < numeroLuminosità; i++) {
-                        ((Immagine) elementiMultimediali[elementoScelto - 1]).aumentaLuminosita();
-                    }
-                };
-                if (azione.equals("-")) {
-                    System.out.println("Di quanto vuoi diminuire la luminosità?");
-                    numeroLuminosità = Integer.parseInt(scanner.nextLine());
-                    for (int i = 0; i < numeroLuminosità; i++) {
-                        ((Immagine) elementiMultimediali[elementoScelto - 1]).diminuisciLuminosita();
-                    }
-                };
-            } while(!azione.equals("m"));
-            ((Immagine) elementiMultimediali[elementoScelto -1]).show();
-        }
-        if(elementiMultimediali[elementoScelto - 1] instanceof Video) {
-            do {
-                System.out.println("Premi p per far partire il video.");
-                System.out.println("Premi '+' per aumentare il volume e '-' per diminuirlo.");
-                System.out.println("Premi 'a' per aumentare la luminosità e 'd' per diminuirla.");
-                azione = scanner.nextLine();
-                if (azione.equals("+")) {
-                    System.out.println("Di quanto vuoi aumentare il volume?");
-                    numeroVolume = Integer.parseInt(scanner.nextLine());
-                    for (int i = 0; i < numeroVolume; i++) {
-                        ((Video) elementiMultimediali[elementoScelto - 1]).alzaVolume();
-                    }
-                }
-                if (azione.equals("-")) {
-                    System.out.println("Di quanto vuoi diminuire il volume?");
-                    numeroVolume = Integer.parseInt(scanner.nextLine());
-                    for (int i = 0; i < numeroVolume; i++) {
-                        ((Video) elementiMultimediali[elementoScelto - 1]).abbassaVolume();
-                    }
-                if (azione.equals("a")) {
-                    System.out.println("Di quanto vuoi aumentare la luminosità?");
-                    numeroLuminosità = Integer.parseInt(scanner.nextLine());
-                    for (int i = 0; i < numeroLuminosità; i++) {
-                        ((Video) elementiMultimediali[elementoScelto - 1]).aumentaLuminosita();
-                    }
-                }
-                if (azione.equals("d")) {
-                    System.out.println("Di quanto vuoi diminuire la luminosità?");
-                    numeroLuminosità = Integer.parseInt(scanner.nextLine());
-                    for (int i = 0; i < numeroLuminosità; i++) {
-                        ((Video) elementiMultimediali[elementoScelto - 1]).diminuisciLuminosita();
-                    }
-                }
-                }
-            } while (!azione.equals("p"));
-            ((Video) elementiMultimediali[elementoScelto - 1]).play();
-        }
+            if (elementoScelto == 0) {
+                exit = true;
+                System.out.println("Chiudo il programma.");
+                break;
+            }
 
+            String azione;
+            int numeroVolume;
+            int numeroLuminosità;
+
+            if (elementiMultimediali[elementoScelto - 1] instanceof Audio) {
+                do {
+                    System.out.println("Premi p per far partire l'audio.");
+                    System.out.println("Premi '+' per aumentare il volume e '-' per diminuirlo.");
+                    azione = scanner.nextLine();
+                    if (azione.equals("+")) {
+                        System.out.println("Di quanto vuoi aumentare il volume?");
+                        numeroVolume = Integer.parseInt(scanner.nextLine());
+                        for (int i = 0; i < numeroVolume; i++) {
+                            ((Audio) elementiMultimediali[elementoScelto - 1]).alzaVolume();
+                        }
+                    }
+                    if (azione.equals("-")) {
+                        System.out.println("Di quanto vuoi diminuire il volume?");
+                        numeroVolume = Integer.parseInt(scanner.nextLine());
+                        for (int i = 0; i < numeroVolume; i++) {
+                            ((Audio) elementiMultimediali[elementoScelto - 1]).abbassaVolume();
+                        }
+                    }
+                } while (!azione.equals("p"));
+                ((Audio) elementiMultimediali[elementoScelto - 1]).play();
+            }
+            if (elementiMultimediali[elementoScelto - 1] instanceof Immagine) {
+                do {
+                    System.out.println("Premi 'm' per mostrare l'immagine.");
+                    System.out.println("Premi '+' per aumentare la luminosità o '-' per diminuirla.");
+                    azione = scanner.nextLine();
+                    if (azione.equals("+")) {
+                        System.out.println("Di quanto vuoi aumentare la luminosità?");
+                        numeroLuminosità = Integer.parseInt(scanner.nextLine());
+                        for (int i = 0; i < numeroLuminosità; i++) {
+                            ((Immagine) elementiMultimediali[elementoScelto - 1]).aumentaLuminosita();
+                        }
+                    }
+                    ;
+                    if (azione.equals("-")) {
+                        System.out.println("Di quanto vuoi diminuire la luminosità?");
+                        numeroLuminosità = Integer.parseInt(scanner.nextLine());
+                        for (int i = 0; i < numeroLuminosità; i++) {
+                            ((Immagine) elementiMultimediali[elementoScelto - 1]).diminuisciLuminosita();
+                        }
+                    }
+                    ;
+                } while (!azione.equals("m"));
+                ((Immagine) elementiMultimediali[elementoScelto - 1]).show();
+            }
+            if (elementiMultimediali[elementoScelto - 1] instanceof Video) {
+                do {
+                    System.out.println("Premi p per far partire il video.");
+                    System.out.println("Premi '+' per aumentare il volume e '-' per diminuirlo.");
+                    System.out.println("Premi 'a' per aumentare la luminosità e 'd' per diminuirla.");
+                    azione = scanner.nextLine();
+                    if (azione.equals("+")) {
+                        System.out.println("Di quanto vuoi aumentare il volume?");
+                        numeroVolume = Integer.parseInt(scanner.nextLine());
+                        for (int i = 0; i < numeroVolume; i++) {
+                            ((Video) elementiMultimediali[elementoScelto - 1]).alzaVolume();
+                        }
+                    }
+                    if (azione.equals("-")) {
+                        System.out.println("Di quanto vuoi diminuire il volume?");
+                        numeroVolume = Integer.parseInt(scanner.nextLine());
+                        for (int i = 0; i < numeroVolume; i++) {
+                            ((Video) elementiMultimediali[elementoScelto - 1]).abbassaVolume();
+                        }
+                        if (azione.equals("a")) {
+                            System.out.println("Di quanto vuoi aumentare la luminosità?");
+                            numeroLuminosità = Integer.parseInt(scanner.nextLine());
+                            for (int i = 0; i < numeroLuminosità; i++) {
+                                ((Video) elementiMultimediali[elementoScelto - 1]).aumentaLuminosita();
+                            }
+                        }
+                        if (azione.equals("d")) {
+                            System.out.println("Di quanto vuoi diminuire la luminosità?");
+                            numeroLuminosità = Integer.parseInt(scanner.nextLine());
+                            for (int i = 0; i < numeroLuminosità; i++) {
+                                ((Video) elementiMultimediali[elementoScelto - 1]).diminuisciLuminosita();
+                            }
+                        }
+                    }
+                } while (!azione.equals("p"));
+                ((Video) elementiMultimediali[elementoScelto - 1]).play();
+            }
+
+        } while(!exit);
     }
 }
