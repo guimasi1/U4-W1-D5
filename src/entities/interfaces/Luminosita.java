@@ -3,8 +3,7 @@ package entities.interfaces;
 public interface Luminosita {
 
     // ATTRIBUTI
-
-    int luminosita;
+    int luminosita = 10;
 
     // METODI
     public void aumentaLuminosita();
