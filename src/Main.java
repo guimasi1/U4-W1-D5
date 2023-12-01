@@ -85,7 +85,7 @@ public class Main {
 
             String azione;
             int numeroVolume;
-            int numeroLuminosità;
+            int numeroLuminosita;
 
             if (elementiMultimediali[elementoScelto - 1] instanceof Audio) {
                 do {
@@ -116,20 +116,20 @@ public class Main {
                     azione = scanner.nextLine();
                     if (azione.equals("+")) {
                         System.out.println("Di quanto vuoi aumentare la luminosità?");
-                        numeroLuminosità = Integer.parseInt(scanner.nextLine());
-                        for (int i = 0; i < numeroLuminosità; i++) {
+                        numeroLuminosita = Integer.parseInt(scanner.nextLine());
+                        for (int i = 0; i < numeroLuminosita; i++) {
                             ((Immagine) elementiMultimediali[elementoScelto - 1]).aumentaLuminosita();
                         }
                     }
-                    ;
+
                     if (azione.equals("-")) {
                         System.out.println("Di quanto vuoi diminuire la luminosità?");
-                        numeroLuminosità = Integer.parseInt(scanner.nextLine());
-                        for (int i = 0; i < numeroLuminosità; i++) {
+                        numeroLuminosita = Integer.parseInt(scanner.nextLine());
+                        for (int i = 0; i < numeroLuminosita; i++) {
                             ((Immagine) elementiMultimediali[elementoScelto - 1]).diminuisciLuminosita();
                         }
                     }
-                    ;
+
                 } while (!azione.equals("m"));
                 ((Immagine) elementiMultimediali[elementoScelto - 1]).show();
             }
@@ -155,15 +155,15 @@ public class Main {
                     }
                     if (azione.equals("a")) {
                             System.out.println("Di quanto vuoi aumentare la luminosità?");
-                            numeroLuminosità = Integer.parseInt(scanner.nextLine());
-                            for (int i = 0; i < numeroLuminosità; i++) {
+                            numeroLuminosita = Integer.parseInt(scanner.nextLine());
+                            for (int i = 0; i < numeroLuminosita; i++) {
                                 ((Video) elementiMultimediali[elementoScelto - 1]).aumentaLuminosita();
                             }
                         }
                     if (azione.equals("d")) {
                             System.out.println("Di quanto vuoi diminuire la luminosità?");
-                            numeroLuminosità = Integer.parseInt(scanner.nextLine());
-                            for (int i = 0; i < numeroLuminosità; i++) {
+                            numeroLuminosita = Integer.parseInt(scanner.nextLine());
+                            for (int i = 0; i < numeroLuminosita; i++) {
                                 ((Video) elementiMultimediali[elementoScelto - 1]).diminuisciLuminosita();
                             }
                         }
