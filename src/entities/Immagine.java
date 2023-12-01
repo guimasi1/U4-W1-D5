@@ -33,8 +33,12 @@ public class Immagine extends ElementoMultimediale implements Luminosita, NonRip
 
     @Override
     public void aumentaLuminosita() {
-        System.out.println("Aumento la luminosità");
-        this.luminosita++;
+        if (this.luminosita < 30) {
+            System.out.println("Aumento la luminosità");
+            this.luminosita++;
+        } else {
+            System.out.println("La luminosità è già al massimo");
+        }
     }
 
     @Override

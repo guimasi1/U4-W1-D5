@@ -47,8 +47,12 @@ public class Audio extends ElementoMultimediale implements Riproducibile {
 
     @Override
     public void alzaVolume() {
-        System.out.println("Alzo il volume");
-        this.volume++;
+        if (this.volume < 30) {
+            System.out.println("Alzo il volume");
+            this.volume++;
+        } else {
+            System.out.println("Il volume è già al massimo");
+        }
     }
 
 

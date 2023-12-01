@@ -32,14 +32,22 @@ public class Video extends ElementoMultimediale implements Riproducibile, Lumino
     // METODI
     @Override
     public void abbassaVolume() {
-        System.out.println("Abbasso il volume");
-        this.volume--;
+        if (this.volume > 0) {
+            System.out.println("Abbasso il volume");
+            this.volume--;
+        } else {
+            System.out.println("Il volume è già a 0");
+        }
     }
 
     @Override
     public void alzaVolume() {
-        System.out.println("Alzo il volume");
-        this.volume++;
+        if (this.volume < 30) {
+            System.out.println("Alzo il volume");
+            this.volume++;
+        } else {
+            System.out.println("Il volume è già al massimo");
+        }
     }
 
     @Override
@@ -72,8 +80,12 @@ public class Video extends ElementoMultimediale implements Riproducibile, Lumino
 
     @Override
     public void aumentaLuminosita() {
-        System.out.println("Aumento la luminosita");
-        this.luminosita++;
+        if (this.luminosita < 30) {
+            System.out.println("Aumento la luminosita");
+            this.luminosita++;
+        } else {
+            System.out.println("La luminosità è già al massimo");
+        }
     }
 
     @Override
