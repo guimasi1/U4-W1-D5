@@ -10,24 +10,40 @@ public class Immagine extends ElementoMultimediale implements Luminosita, NonRip
     private int luminosita;
 
     // COSTRUTTORI
-    public Immagine(String title, int luminosita) {
+    public Immagine(String title) {
         super(title);
-        this.luminosita = luminosita;
+        this.luminosita = 10;
     }
 
     // METODI
     @Override
     public void show() {
         System.out.println("Mostro l'immagine");
+        System.out.println(this.getTitle() + this.asterischiLuminosita());
+    }
+
+    @Override
+    public StringBuilder asterischiLuminosita() {
+        StringBuilder asterischi = new StringBuilder();
+        for (int i = 0; i < this.luminosita; i++) {
+            asterischi.append("*");
+        }
+        return asterischi;
     }
 
     @Override
     public void aumentaLuminosita() {
-        System.out.println();
+        System.out.println("Aumento la luminosità");
+        this.luminosita++;
     }
 
     @Override
     public void diminuisciLuminosita() {
-
+        if(this.luminosita > 1) {
+            System.out.println("Diminuisco la luminosità");
+            this.luminosita--;
+        } else {
+            System.out.println("La luminosità è già 0");
+        }
     }
 }
