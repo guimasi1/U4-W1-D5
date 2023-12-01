@@ -15,4 +15,12 @@ public abstract class ElementoMultimediale {
     public String getTitolo() {
         return titolo;
     }
+
+    // SETTER
+
+    public String setTitolo(String nuovoTitolo) {
+        this.titolo = nuovoTitolo;
+        return this.titolo;
+    }
+
 }

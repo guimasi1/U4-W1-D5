@@ -15,6 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
         aggiungiMedia();
+        modificaElementi();
         player();
     }
     public static void aggiungiMedia() {
@@ -172,5 +173,36 @@ public class Main {
             }
 
         } while(!exit);
+    }
+
+    public static void modificaElementi() {
+        String vuoiModificare;
+        do {
+            System.out.println("Vuoi modificare degli elementi? Scrivere si o no.");
+            vuoiModificare = scanner.nextLine().toLowerCase();
+        } while(!(vuoiModificare.equals("si") || vuoiModificare.equals("no")));
+
+        int elementoDaModificare;
+        if (vuoiModificare.equals("si")) {
+            System.out.println("Questi sono gli elementi da poter modificare");
+            for (ElementoMultimediale elemento: elementiMultimediali
+            ) {
+                System.out.println(elemento.getTitolo() + " " + elemento.getClass().getSimpleName());
+            }
+            do {
+                System.out.println("Quale elemento vuoi modifare? Scegli da 1 a " + numeroElementiDaCreare);
+                elementoDaModificare = Integer.parseInt(scanner.nextLine());
+            } while(!(elementoDaModificare <= numeroElementiDaCreare && elementoDaModificare >= 1));
+            String nuovoTitolo;
+
+            do {
+                System.out.println("Che titolo gli vuoi dare?");
+                nuovoTitolo = scanner.nextLine();
+            } while (nuovoTitolo == null);
+            elementiMultimediali[elementoDaModificare - 1].setTitolo(nuovoTitolo);
+
+        } else {
+            System.out.println("Nessuna modifica apportata.");
+        }
     }
 }
